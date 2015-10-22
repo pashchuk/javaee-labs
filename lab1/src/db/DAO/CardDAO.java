@@ -34,7 +34,24 @@ public class CardDAO extends GenericDAOImpl<Card> {
 
     @Override
     public void update(Card card) {
-
+        Card target = DAOFactory.getInstance().getCardDAO().findById(card.getId());
+        if(target==null){
+            System.out.println(String.format("Card with id = %s not exist in database",card.getId()));
+            return;
+        }
+        Statement statement;
+        try {
+            statement = connection.createStatement();
+            statement.executeUpdate(String.format("UPDATE cards SET user_id=%s, doctor_id=%s, " +
+                            "diagnosis_id=%s, name=%s WHERE id=%s",
+                    card.getUser().getId(),
+                    card.getDoctor().getId(),
+                    card.getDiagnosis().getId(),
+                    card.getName(),
+                    card.getId()));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
