@@ -1,5 +1,5 @@
-/*
- * Slightly modified version of the com.ibatis.common.jdbc.ScriptRunner class
+package db;/*
+ * Slightly modified version of the com.ibatis.common.jdbc.db.ScriptRunner class
  * from the iBATIS Apache project. Only removed dependency on Resource class
  * and a constructor 
  * GPSHansl, 06.08.2015: regex for delimiter, rearrange comment/delimiter detection, remove some ide warnings.
