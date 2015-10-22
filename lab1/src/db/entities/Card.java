@@ -5,9 +5,9 @@ package db.entities;
  */
 public class Card {
     int Id;
-    int DoctorId;
-    int UserId;
-    int DiagnosisId;
+    Doctor Doctor;
+    User User;
+    Diagnosis Diagnosis;
     String Name;
 
     public int getId() {
@@ -18,28 +18,28 @@ public class Card {
         Id = id;
     }
 
-    public int getDoctorId() {
-        return DoctorId;
+    public db.entities.Doctor getDoctor() {
+        return Doctor;
     }
 
-    public void setDoctorId(int doctorId) {
-        DoctorId = doctorId;
+    public void setDoctor(db.entities.Doctor doctor) {
+        Doctor = doctor;
     }
 
-    public int getUserId() {
-        return UserId;
+    public db.entities.User getUser() {
+        return User;
     }
 
-    public void setUserId(int userId) {
-        UserId = userId;
+    public void setUser(db.entities.User user) {
+        User = user;
     }
 
-    public int getDiagnosisId() {
-        return DiagnosisId;
+    public db.entities.Diagnosis getDiagnosis() {
+        return Diagnosis;
     }
 
-    public void setDiagnosisId(int diagnosisId) {
-        DiagnosisId = diagnosisId;
+    public void setDiagnosis(db.entities.Diagnosis diagnosis) {
+        Diagnosis = diagnosis;
     }
 
     public String getName() {
@@ -48,16 +48,5 @@ public class Card {
 
     public void setName(String name) {
         Name = name;
-    }
-
-    @Override
-    public String toString() {
-        return "Card{" +
-                "Id=" + Id +
-                ", DoctorId=" + DoctorId +
-                ", UserId=" + UserId +
-                ", DiagnosisId=" + DiagnosisId +
-                ", Name='" + Name + '\'' +
-                '}';
     }
 }

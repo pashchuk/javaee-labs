@@ -5,8 +5,8 @@ package db.entities;
  */
 public class Note {
     int Id;
-    int DoctorId;
-    int CardId;
+    Doctor Doctor;
+    Card card;
     String NoteText;
 
     public int getId() {
@@ -17,20 +17,20 @@ public class Note {
         Id = id;
     }
 
-    public int getDoctorId() {
-        return DoctorId;
+    public db.entities.Doctor getDoctor() {
+        return Doctor;
     }
 
-    public void setDoctorId(int doctorId) {
-        DoctorId = doctorId;
+    public void setDoctor(db.entities.Doctor doctor) {
+        Doctor = doctor;
     }
 
-    public int getCardId() {
-        return CardId;
+    public Card getCard() {
+        return card;
     }
 
-    public void setCardId(int cardId) {
-        CardId = cardId;
+    public void setCard(Card card) {
+        this.card = card;
     }
 
     public String getNoteText() {
@@ -39,15 +39,5 @@ public class Note {
 
     public void setNoteText(String noteText) {
         NoteText = noteText;
-    }
-
-    @Override
-    public String toString() {
-        return "Note{" +
-                "Id=" + Id +
-                ", DoctorId=" + DoctorId +
-                ", CardId=" + CardId +
-                ", NoteText='" + NoteText + '\'' +
-                '}';
     }
 }
