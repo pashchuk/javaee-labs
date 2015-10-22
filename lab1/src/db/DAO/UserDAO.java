@@ -1,6 +1,5 @@
 package db.DAO;
 
-import db.entities.Doctor;
 import db.entities.User;
 
 import java.sql.PreparedStatement;
@@ -13,6 +12,9 @@ import java.util.List;
  * Created by mamax on 10/22/2015.
  */
 public class UserDAO extends GenericDAOImpl<User> {
+    public UserDAO(){
+        tableName = "users";
+    }
     @Override
     public void insert(User user) {
         PreparedStatement statement;

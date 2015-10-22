@@ -12,6 +12,9 @@ import java.util.List;
  * Created by mamax on 10/22/2015.
  */
 public class DoctorDAO extends GenericDAOImpl<Doctor> {
+    public DoctorDAO(){
+        tableName = "doctors";
+    }
     @Override
     public void insert(Doctor doctor) {
         PreparedStatement statement;
