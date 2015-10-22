@@ -4,13 +4,15 @@ package db.DAO;
  * Created by mamax on 10/22/2015.
  */
 public class DAOFactory {
-    static DAOFactory instance;
-    static CardDAO cardDAO;
-    static DiagnosisDAO diagnosisDAO;
-    static DoctorDAO doctorDAO;
-    static NoteDAO noteDAO;
-    static UserDAO userDAO;
-    static Object lockObject = new Object();
+    private static DAOFactory instance;
+    private static CardDAO cardDAO;
+    private static DiagnosisDAO diagnosisDAO;
+    private static DoctorDAO doctorDAO;
+    private static NoteDAO noteDAO;
+    private static UserDAO userDAO;
+    private static Object lockObject = new Object();
+
+    private DAOFactory(){}
 
     public static DAOFactory getInstance() {
         if(instance==null)
@@ -21,31 +23,31 @@ public class DAOFactory {
         return instance;
     }
 
-    public static CardDAO getCardDAO() {
+    public CardDAO getCardDAO() {
         if(cardDAO==null)
             cardDAO = new CardDAO();
         return cardDAO;
     }
 
-    public static DiagnosisDAO getDiagnosisDAO() {
+    public DiagnosisDAO getDiagnosisDAO() {
         if(diagnosisDAO==null)
             diagnosisDAO = new DiagnosisDAO();
         return diagnosisDAO;
     }
 
-    public static DoctorDAO getDoctorDAO() {
+    public DoctorDAO getDoctorDAO() {
         if(doctorDAO==null)
             doctorDAO = new DoctorDAO();
         return doctorDAO;
     }
 
-    public static NoteDAO getNoteDAO() {
+    public NoteDAO getNoteDAO() {
         if(noteDAO==null)
             noteDAO = new NoteDAO();
         return noteDAO;
     }
 
-    public static UserDAO getUserDAO() {
+    public UserDAO getUserDAO() {
         if(userDAO==null)
             userDAO = new UserDAO();
         return userDAO;
