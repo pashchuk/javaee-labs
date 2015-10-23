@@ -11,12 +11,7 @@ public class Card {
     Doctor Doctor;
     User User;
     Diagnosis Diagnosis;
-    List<Note> Notes;
     String Name;
-
-    public Card(){
-        Notes = new ArrayList<>();
-    }
 
     public int getId() {
         return Id;
@@ -58,16 +53,14 @@ public class Card {
         Name = name;
     }
 
-    public void addNote(Note note) {
-        note.setCard(this);
-        Notes.add(note);
-    }
-
-    public Note getNote(int id) {
-        return Notes.get(id);
-    }
-
-    public List<Note> getNotes(){
-        return Notes;
+    @Override
+    public String toString() {
+        return "Card{" +
+                "Id=" + Id +
+                ", Doctor=" + Doctor +
+                ", User=" + User +
+                ", Diagnosis=" + Diagnosis +
+                ", Name='" + Name + '\'' +
+                '}';
     }
 }
