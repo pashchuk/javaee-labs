@@ -21,7 +21,7 @@ public class DiagnosisDAO extends GenericDAOImpl<Diagnosis> {
         Statement statement;
         try {
             statement = connection.createStatement();
-            statement.executeQuery(String.format("INSERT INTO diagnosis (description) VALUES (%s)",
+            statement.execute(String.format("INSERT INTO diagnosis (description) VALUES (\"%s\")",
                     diagnosis.getDescription()));
         } catch (SQLException e) {
             e.printStackTrace();
