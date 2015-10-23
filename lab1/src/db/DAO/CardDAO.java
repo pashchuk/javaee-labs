@@ -1,6 +1,7 @@
 package db.DAO;
 
 import db.entities.Card;
+import db.entities.Note;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -21,8 +22,8 @@ public class CardDAO extends GenericDAOImpl<Card> {
         Statement statement;
         try {
             statement = connection.createStatement();
-            statement.executeQuery(String.format("INSERT INTO cards (doctor_id, user_id, diagnosis_id, name) " +
-                            "VALUES (%s,%s,%s,%s)",
+            statement.execute(String.format("INSERT INTO cards (doctor_id, user_id, diagnosis_id, `name`) " +
+                            "VALUES (\"%s\",\"%s\",\"%s\",\"%s\")",
                     card.getDoctor().getId(),
                     card.getUser().getId(),
                     card.getDiagnosis().getId(),
@@ -43,7 +44,7 @@ public class CardDAO extends GenericDAOImpl<Card> {
         try {
             statement = connection.createStatement();
             statement.executeUpdate(String.format("UPDATE cards SET user_id=%s, doctor_id=%s, " +
-                            "diagnosis_id=%s, name=%s WHERE id=%s",
+                            "diagnosis_id=%s, `name`=%s WHERE id=%s",
                     card.getUser().getId(),
                     card.getDoctor().getId(),
                     card.getDiagnosis().getId(),
