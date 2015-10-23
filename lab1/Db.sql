@@ -22,7 +22,7 @@ CREATE TABLE cards
 	(id INTEGER not NULL AUTO_INCREMENT,
 	doctor_id INTEGER not NULL,
 	user_id INTEGER not NULL,
-	diagnosis_id INTEGER not NULL,
+	diagnosis_id INTEGER,
 	name VARCHAR(255),
 	PRIMARY KEY ( id ),
 
