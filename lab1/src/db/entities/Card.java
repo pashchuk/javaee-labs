@@ -1,5 +1,8 @@
 package db.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by mamax on 10/22/2015.
  */
@@ -8,7 +11,12 @@ public class Card {
     Doctor Doctor;
     User User;
     Diagnosis Diagnosis;
+    List<Note> Notes;
     String Name;
+
+    public Card(){
+        Notes = new ArrayList<>();
+    }
 
     public int getId() {
         return Id;
@@ -48,5 +56,18 @@ public class Card {
 
     public void setName(String name) {
         Name = name;
+    }
+
+    public void addNote(Note note) {
+        note.setCard(this);
+        Notes.add(note);
+    }
+
+    public Note getNote(int id) {
+        return Notes.get(id);
+    }
+
+    public List<Note> getNotes(){
+        return Notes;
     }
 }
